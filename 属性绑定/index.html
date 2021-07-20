@@ -11,20 +11,20 @@
 
 <body>
     <div id="bind-attribute">
-        <span v-bind:title="message">
-            鼠标悬停后提示信息
+        <!-- 光写title赋值的是字符串
+        v-bind赋值的是data里的属性 -->
+        <span v-bind:title="time">
+            鼠标悬停后提示信息 
         </span>
     </div>
-
     <script>
         const AttributeBinding = {
             data() {
                 return {
-                    message: "第一次刷新时间" + new Date().toLocaleString()
+                    time: "第一次刷新时间" + new Date().toLocaleString()
                 }
             }
         }
-
         Vue.createApp(AttributeBinding).mount('#bind-attribute')
     </script>
 </body>
