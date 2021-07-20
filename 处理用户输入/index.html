@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>处理用户输入v-on </title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+
+<body>
+    <div id="event-handling">
+        <div>
+            <p>{{message}}</p>
+            <button v-on:click="reverseMessage">消息翻转</button>
+        </div>
+        <div>
+            <p>{{message1}}</p>
+        </div>
+
+    </div>
+    <script>
+        const EventHandling = {
+            data() {
+                return {
+                    message: 'Hello vue',
+                    message1: '你转我也转'
+                }
+            },
+            methods: {
+                reverseMessage() {
+                    this.message = this.message
+                        .split('')
+                        .reverse('')
+                        .join('')
+                    this.message1 = this.message1
+                        .split('')
+                        // split() 方法用于把一个字符串分割成字符串数组。
+                        .reverse('')
+                        // reverse() 方法用于颠倒数组中元素的顺序。
+                        .join('')
+                    // join() 方法用于把数组中的所有元素转换一个字符串。
+
+                }
+            }
+        }
+        Vue.createApp(EventHandling).mount('#event-handling')
+    </script>
+</body>
+
+</html>
