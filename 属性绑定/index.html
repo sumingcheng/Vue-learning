@@ -5,30 +5,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>属性绑定</title>
     <script src="https://unpkg.com/vue@next"></script>
-    <link rel="stylesheet" href="css.css">
 </head>
 
 <body>
-    <div id="counter">
-        Counter: {{ counter }}
+    <div id="bind-attribute">
+        <span v-bind:title="message">
+            鼠标悬停后提示信息
+        </span>
     </div>
+
     <script>
-        const Counter = {
+        const AttributeBinding = {
             data() {
                 return {
-                    counter: 0
+                    message: "鼠标悬停" + new Date().toLocaleString()
                 }
-            },
-            mounted() {
-                setInterval(() => {
-                    this.counter++
-                }, 1000)
             }
         }
-        
-        Vue.createApp(Counter).mount('#counter')
+
+        Vue.createApp(AttributeBinding).mount('#bind-attribute')
     </script>
 </body>
 
