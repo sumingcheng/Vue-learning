@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>输出数组</title>
+    <style type="text/css">
+        li {list-style-type:none;}
+    </style>
+</head>
+<body>
+    <div id="list-rendering">
+        <ol>
+            <li v-for="todo in sub">
+                {{todo.text}}
+            </li>
+        </ol>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        const listRendering={
+            data () {
+                return {
+                    sub:[
+                        {text:'1'},
+                        {text:'2'},
+                        {text:'3'},
+                        {text:'4'},
+                        {text:'5'},
+                        {text:'6'},
+                    ]
+                }
+            }
+        }
+
+        Vue.createApp(listRendering).mount('#list-rendering')
+    </script>
+    
+</body>
+</html>
