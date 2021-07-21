@@ -2,4 +2,6 @@
 ## 包含以下内容
 ### Hello Vue
 ### counter property ++
-### v-bind
+### v-bind 
+### 双向绑定
+### 

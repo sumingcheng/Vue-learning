@@ -7,6 +7,21 @@
     <title>v-if</title>
 </head>
 <body>
-    
+    <div id="conditional-1">
+        <span v-if="seen">现在你看到我了</span>
+    </div>
+
+    <script>
+        const Conditional = {
+            data(){
+                return{
+                    seen: true,
+
+                }
+            }
+        }
+
+        Vue.createApp(conditional).mount('#conditional-1')
+    </script>
 </body>
 </html>
