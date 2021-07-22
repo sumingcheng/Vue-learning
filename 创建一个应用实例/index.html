@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>组件实例</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+
+<body>
+    <script>
+        const app = Vue.createApp({})
+        app.component('SearchInput',SearchInputComponent)
+        app.directive('focus',FocusDirective)
+        app.use(LocalePlugin)
+
+        Vue.createApp({})
+            .component('SearchInput',SearchInputComponent)
+            .directive('focus',FocusDirective)
+            .use(LocalePlugin)
+       
+    </script>
+</body>
+
+</html>
